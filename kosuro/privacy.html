@@ -1,0 +1,527 @@
+<title>코스로 개인정보처리방침</title>
+<style>
+  :root{
+    --paper:#faf9f6;
+    --paper-raised:#ffffff;
+    --ink:#232322;
+    --ink-soft:#5b5b57;
+    --ink-faint:#8b8b85;
+    --line:#e4e1d8;
+    --line-strong:#d2cebe;
+    --accent:#208AEF;
+    --accent-soft:#e8f2fd;
+    --accent-ink:#0d4d8a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#17181a;
+      --paper-raised:#1f2023;
+      --ink:#eceae4;
+      --ink-soft:#b3b0a8;
+      --ink-faint:#7d7b74;
+      --line:#302f2c;
+      --line-strong:#403f3a;
+      --accent:#5aa9f2;
+      --accent-soft:#1c2c3a;
+      --accent-ink:#a9d3fb;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#17181a;
+    --paper-raised:#1f2023;
+    --ink:#eceae4;
+    --ink-soft:#b3b0a8;
+    --ink-faint:#7d7b74;
+    --line:#302f2c;
+    --line-strong:#403f3a;
+    --accent:#5aa9f2;
+    --accent-soft:#1c2c3a;
+    --accent-ink:#a9d3fb;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Noto Sans KR","Malgun Gothic",sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:1040px;
+    margin:0 auto;
+    padding:56px 24px 96px;
+    display:grid;
+    grid-template-columns:220px minmax(0,1fr);
+    gap:56px;
+    align-items:start;
+  }
+  @media (max-width:820px){
+    .page{grid-template-columns:1fr; padding:36px 18px 72px;}
+    .toc{display:none;}
+  }
+
+  header.masthead{
+    grid-column:1 / -1;
+    border-bottom:1px solid var(--line-strong);
+    padding-bottom:28px;
+    margin-bottom:8px;
+  }
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent-ink);
+    font-weight:700;
+    margin:0 0 14px;
+  }
+  h1{
+    font-family:"Noto Serif KR",serif;
+    font-weight:700;
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.3;
+    margin:0 0 12px;
+    text-wrap:balance;
+    letter-spacing:-0.01em;
+  }
+  .lede{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:62ch;
+    margin:0 0 20px;
+  }
+  .meta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 28px;
+    font-size:13px;
+    color:var(--ink-faint);
+    font-variant-numeric:tabular-nums;
+  }
+  .meta-row dt{font-weight:700; color:var(--ink-soft); display:inline;}
+  .meta-row dd{display:inline; margin:0 0 0 6px;}
+  .meta-item{display:flex; gap:0;}
+
+  nav.toc{
+    position:sticky;
+    top:40px;
+    font-size:13.5px;
+  }
+  nav.toc .toc-label{
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-size:11.5px;
+    color:var(--ink-faint);
+    margin-bottom:14px;
+  }
+  nav.toc ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-left:1px solid var(--line);
+  }
+  nav.toc li a{
+    display:block;
+    padding:6px 0 6px 16px;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-left:2px solid transparent;
+    margin-left:-1px;
+  }
+  nav.toc li a:hover, nav.toc li a:focus-visible{
+    color:var(--accent-ink);
+    border-left-color:var(--accent);
+    outline:none;
+  }
+  nav.toc li.appendix a{color:var(--ink-faint); font-size:12.5px;}
+
+  main{min-width:0;}
+
+  section.article{
+    padding:30px 0;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:32px;
+  }
+  section.article:last-of-type{border-bottom:none;}
+  .article-num{
+    font-family:"Noto Serif KR",serif;
+    color:var(--accent-ink);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.02em;
+    margin:0 0 6px;
+  }
+  h2{
+    font-family:"Noto Serif KR",serif;
+    font-size:21px;
+    font-weight:700;
+    margin:0 0 16px;
+    text-wrap:balance;
+  }
+  .article p{
+    margin:0 0 14px;
+    max-width:70ch;
+    color:var(--ink);
+  }
+  .article p:last-child{margin-bottom:0;}
+  .article ul, .article ol.sub{
+    margin:0 0 14px;
+    padding-left:22px;
+    max-width:70ch;
+  }
+  .article li{margin-bottom:6px;}
+  .article ol.sub{list-style:decimal;}
+
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:6px 0 18px;
+    font-size:14px;
+  }
+  .table-wrap{overflow-x:auto; margin-bottom:18px;}
+  table.data-table th, table.data-table td{
+    text-align:left;
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.data-table th{
+    font-size:12px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    font-weight:700;
+    border-bottom:1px solid var(--line-strong);
+    white-space:nowrap;
+  }
+  table.data-table tr:last-child td{border-bottom:none;}
+
+  .callout{
+    background:var(--accent-soft);
+    border:1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+    border-radius:10px;
+    padding:16px 18px;
+    margin:4px 0 18px;
+    font-size:14.5px;
+  }
+  .callout strong{color:var(--accent-ink);}
+
+  .processor-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:12px;
+    margin:6px 0 18px;
+  }
+  .processor-card{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+  }
+  .processor-card .p-name{font-weight:700; font-size:14.5px; margin-bottom:4px;}
+  .processor-card .p-role{font-size:12.5px; color:var(--ink-faint); margin-bottom:8px;}
+  .processor-card .p-detail{font-size:13px; color:var(--ink-soft);}
+
+  .contact-block{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 24px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px 40px;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .contact-block a{color:var(--accent-ink); font-weight:700; text-decoration:none;}
+  .contact-block a:hover{text-decoration:underline;}
+
+  footer.doc-footer{
+    grid-column:1/-1;
+    margin-top:12px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:12.5px;
+    color:var(--ink-faint);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+
+<div class="page">
+  <header class="masthead">
+    <p class="eyebrow">코스로 · Privacy Policy</p>
+    <h1>개인정보처리방침</h1>
+    <p class="lede">코스로(이하 "서비스")는 위치기반 여행 일정 서비스이며, 이용자의 개인정보를 소중히 다룹니다. 이 방침은 서비스가 어떤 정보를 왜 수집하고, 어떻게 보관·처리·파기하는지 설명합니다.</p>
+    <dl class="meta-row">
+      <div class="meta-item"><dt>시행일자</dt><dd>2026년 9월 27일</dd></div>
+      <div class="meta-item"><dt>버전</dt><dd>1.4</dd></div>
+      <div class="meta-item"><dt>최종 수정일</dt><dd>2026년 9월 27일</dd></div>
+      <div class="meta-item"><dt>운영자</dt><dd>개인 개발자 (코스로)</dd></div>
+      <div class="meta-item"><dt>문의</dt><dd>jomin4119@gmail.com</dd></div>
+    </dl>
+  </header>
+
+  <nav class="toc" aria-label="목차">
+    <p class="toc-label">목차</p>
+    <ol>
+      <li><a href="#art1">제1조 목적</a></li>
+      <li><a href="#art2">제2조 수집 항목</a></li>
+      <li><a href="#art3">제3조 이용 목적</a></li>
+      <li><a href="#art4">제4조 보유·이용 기간</a></li>
+      <li><a href="#art5">제5조 위치정보 처리</a></li>
+      <li><a href="#art6">제6조 제3자 제공</a></li>
+      <li><a href="#art7">제7조 처리 위탁·국외 이전</a></li>
+      <li><a href="#art8">제8조 이용자의 권리</a></li>
+      <li><a href="#art9">제9조 파기 절차·방법</a></li>
+      <li><a href="#art10">제10조 안전성 확보조치</a></li>
+      <li><a href="#art11">제11조 아동의 개인정보</a></li>
+      <li><a href="#art12">제12조 보호책임자</a></li>
+      <li><a href="#art13">제13조 고지의 의무</a></li>
+      <li class="appendix"><a href="#appendix">부칙</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section class="article" id="art1">
+      <p class="article-num">제1조</p>
+      <h2>목적</h2>
+      <p>이 개인정보처리방침은 코스로(이하 "서비스")를 이용하는 회원의 개인정보를 서비스 운영자가 어떤 원칙에 따라 수집·이용·보관·파기하는지, 그리고 이용자가 자신의 개인정보를 어떻게 통제할 수 있는지를 안내하기 위해 작성되었습니다.</p>
+    </section>
+
+    <section class="article" id="art2">
+      <p class="article-num">제2조</p>
+      <h2>수집하는 개인정보 항목 및 수집 방법</h2>
+      <p>서비스는 아래와 같은 개인정보를 수집합니다.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>구분</th><th>수집 항목</th><th>수집 시점 / 방법</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>회원가입·로그인</td><td>이메일 주소, 닉네임(이름), 프로필 사진 URL</td><td>Google 또는 Kakao 소셜 로그인 시 해당 사업자로부터 자동 수신</td></tr>
+            <tr><td>위치정보</td><td>GPS 좌표(정확한 위치), 백그라운드 위치</td><td>일정 진행("일정 시작하기") 중에만 수집 — 앱을 종료해도 진행 중인 세션이 있으면 계속 기록됨</td></tr>
+            <tr><td>사진</td><td>카메라 촬영 사진 또는 앨범에서 선택한 사진</td><td>이용자가 일정 장소에 사진을 첨부할 때 직접 업로드</td></tr>
+            <tr><td>이용자 작성 콘텐츠</td><td>일정 제목, 장소명, 방문 시간, 메모, 입장료 등</td><td>일정 생성·수정 화면에서 이용자가 직접 입력 (공개 피드에 노출됨)</td></tr>
+            <tr><td>이용 기록</td><td>일정 시작·완료 이력, 실제 소요시간, 이동 통계</td><td>일정 진행 중 자동 생성</td></tr>
+            <tr><td>완주 기록</td><td>완주한 코스(원본 코스), GPS 인증 완주 여부, 실제 총 소요시간, 장소 건너뜀 여부, 몇 번째 인증 완주인지, 완주 일시</td><td>다른 이용자의 코스를 복사해 끝까지 진행했을 때 자동 생성 (위치 좌표 원본은 저장하지 않음)</td></tr>
+            <tr><td>후기·답글 (공개)</td><td>별점(1~5), 한 줄 후기(최대 100자), 답글(최대 200자), 작성자 표시 이름(소셜 로그인 프로필의 이름·닉네임, 없으면 "여행자"), 작성·수정 일시</td><td>이용자가 완주 후 후기를 쓰거나 후기에 답글을 달 때 직접 입력 — 누구나(비로그인 포함) 열람 가능</td></tr>
+            <tr><td>좋아요</td><td>좋아요를 누른 후기, 누른 일시</td><td>이용자가 후기에 좋아요를 누를 때 생성 — 누가 눌렀는지는 본인만 볼 수 있고, 다른 이용자에게는 좋아요 수만 공개</td></tr>
+            <tr><td>신고 기록</td><td>신고한 후기·답글·일정, 신고 사유, 신고 일시</td><td>이용자가 신고 기능을 이용할 때 생성 (신고자 정보는 신고 대상자에게 공개되지 않음)</td></tr>
+            <tr><td>푸시 알림 수신 정보</td><td>기기별 푸시 토큰(Expo push token), 기기 플랫폼(Android/iOS), 알림 종류별 수신 설정(새 후기·답글·좋아요), 좋아요 알림 발송 이력(어떤 후기에 누가 좋아요를 눌러 알림이 나갔는지)</td><td>이용자가 알림 권한을 허용할 때 토큰 자동 등록, 설정 화면에서 스위치를 바꿀 때 저장, 좋아요 알림 발송 시 자동 생성(같은 좋아요로 알림이 중복 발송되지 않도록 하기 위함)</td></tr>
+            <tr><td>위치 이용 동의 기록</td><td>동의한 위치기반서비스 이용약관 버전, 동의 일시, 익명 통계 포함 여부와 변경 일시, 위치 이용 일시 중지 여부</td><td>일정 시작 전 동의 화면 또는 설정 화면에서 이용자가 선택할 때 저장</td></tr>
+            <tr><td>위치정보 이용·제공사실 확인자료</td><td>위치를 이용한 일시, 이용 목적(장소 도착 판정·이동 기록·GPS 인증 완주), 이용한 서비스, 제3자 제공 여부</td><td>위치로 만든 결과가 서버에 저장될 때 자동 기록 (위치정보법 제16조 제2항)</td></tr>
+            <tr><td>오류·충돌 로그</td><td>기기 모델, OS 버전, 크래시 스택 트레이스</td><td>오류 발생 시 Sentry를 통해 자동 수집</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>회원가입 시 만 14세 이상 여부는 소셜 로그인 사업자의 정책을 따르며, 서비스가 별도로 생년월일 등 추가 정보를 수집하지 않습니다.</p>
+    </section>
+
+    <section class="article" id="art3">
+      <p class="article-num">제3조</p>
+      <h2>개인정보의 수집 및 이용 목적</h2>
+      <ul>
+        <li><strong>회원 식별·인증</strong> — 소셜 로그인을 통한 본인 확인 및 서비스 접근 권한 부여</li>
+        <li><strong>여행 일정 진행 지원</strong> — 실시간 위치를 기준으로 다음 장소 도착 여부를 자동 판단하고, 이동수단·소요시간을 기록하여 완료 리포트 제공</li>
+        <li><strong>콘텐츠 제공</strong> — 이용자가 작성한 일정을 다른 이용자가 열람·참고할 수 있는 공개 피드 운영, 찜(북마크) 기능 제공</li>
+        <li><strong>완주 후기 운영</strong> — GPS 인증 완주한 이용자에 한해 후기 작성 허용, 후기·답글·좋아요 표시 및 정렬(평점순·좋아요순)</li>
+        <li><strong>코스별 익명 통계</strong> — GPS 인증 완주 기록을 후기 작성 여부와 관계없이 코스별 <em>실측 평균 소요시간</em>과 <em>인증 완주 횟수</em> 계산에 익명으로 활용 (이름이나 개별 기록은 어떤 화면에도 표시되지 않으며, 개별 실측 시간은 이용자가 후기를 등록한 경우에만 그 후기에 공개)</li>
+        <li><strong>푸시 알림 발송</strong> — 내 코스에 새 후기가 달렸을 때, 내 후기에 답글·좋아요가 달렸을 때 알림을 보내고, 알림을 누르면 해당 후기로 이동</li>
+        <li><strong>신고 처리</strong> — 후기·답글·일정에 대한 신고 접수 및 운영자 확인·조치, 중복 신고 방지</li>
+        <li><strong>서비스 품질 개선</strong> — 오류·크래시 로그 분석을 통한 안정성 개선</li>
+        <li><strong>부정 이용 방지</strong> — 본인 소유 일정에 한해 수정·삭제 권한을 부여하기 위한 소유권 확인</li>
+      </ul>
+    </section>
+
+    <section class="article" id="art4">
+      <p class="article-num">제4조</p>
+      <h2>개인정보의 보유 및 이용 기간</h2>
+      <p>서비스는 원칙적으로 이용자가 회원 탈퇴를 요청하거나 개인정보 삭제를 요청한 경우 지체 없이 해당 정보를 파기합니다. 다만 아래의 경우 예외로 합니다.</p>
+      <ul>
+        <li>이용자가 직접 공개로 작성한 일정 콘텐츠는, 다른 이용자가 이미 열람·복제·참고했을 수 있는 공개 피드의 특성상 삭제 요청 시점부터 지체 없이 비공개 처리 및 파기하되 즉시 반영에는 최대 수 일이 소요될 수 있습니다.</li>
+        <li>관계 법령에 따라 보존이 필요한 정보는 해당 법령이 정한 기간 동안 보관합니다.</li>
+      </ul>
+      <p>항목별 보유 기간은 다음과 같습니다.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>항목</th><th>보유 기간</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>완주 기록</td><td>회원 탈퇴 시까지. 원본 코스가 삭제되면 함께 삭제</td></tr>
+            <tr><td>후기·답글</td><td>이용자가 직접 삭제하거나 회원 탈퇴할 때까지. 원본 코스가 삭제되면 그 코스의 후기·답글도 함께 삭제되고, 후기가 삭제되면 그 후기의 답글·좋아요·신고도 함께 삭제</td></tr>
+            <tr><td>좋아요</td><td>이용자가 좋아요를 취소하거나 회원 탈퇴할 때까지</td></tr>
+            <tr><td>좋아요 알림 발송 이력</td><td>발송일로부터 1년. 그 전에 해당 후기가 삭제되거나 좋아요를 누른 이용자가 탈퇴하면 함께 삭제 (1년 안에는 좋아요를 취소했다가 다시 눌러도 같은 알림이 다시 가지 않도록 유지)</td></tr>
+            <tr><td>신고 기록</td><td>신고 대상이 삭제되거나 신고자가 회원 탈퇴할 때까지</td></tr>
+            <tr><td>푸시 토큰</td><td>해당 기기에서 로그아웃하거나 회원 탈퇴할 때까지. 알림 서비스가 더 이상 유효하지 않은 기기라고 응답하면 즉시 삭제</td></tr>
+            <tr><td>알림 수신 설정</td><td>회원 탈퇴 시까지</td></tr>
+            <tr><td>위치 이용 동의 기록</td><td>동의를 철회하거나 회원 탈퇴할 때까지</td></tr>
+            <tr><td>위치정보 이용·제공사실 확인자료</td><td>기록일로부터 6개월. 그 전에 동의를 철회하거나 회원 탈퇴하면 함께 삭제</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>회원 탈퇴 시 해당 이용자의 완주 기록·후기·답글·좋아요·신고 기록·푸시 토큰·알림 설정이 모두 함께 삭제되며, 코스별 평균 별점·후기 수·실측 평균 소요시간·인증 완주 횟수도 삭제된 기록을 제외하고 다시 계산됩니다.</p>
+    </section>
+
+    <section class="article" id="art5">
+      <p class="article-num">제5조</p>
+      <h2>위치정보의 처리</h2>
+      <div class="callout">
+        <strong>백그라운드 위치 권한 안내.</strong> 서비스는 이용자가 <em>"일정 시작하기"</em>로 여행 세션을 진행하는 동안에만 백그라운드 위치를 수집합니다. 앱이 화면에 보이지 않거나 종료되어 있어도, 진행 중인 세션이 있다면 다음 장소 도착을 감지하기 위해 위치 확인이 계속됩니다. 세션을 종료("일정 완료" 또는 세션 중단)하면 백그라운드 위치 수집도 함께 중단됩니다.
+      </div>
+      <ul>
+        <li>위치정보는 도착 판정, 이동 거리·이동수단 추정, 완료 리포트 작성에만 사용되며, 광고 목적으로 이용되지 않습니다.</li>
+        <li>진행 중인 세션 상태는 이용자 기기에 저장되어 앱이 강제 종료되어도 복원되며, 위치 좌표 자체는 서버에 원본 그대로 영구 저장되지 않고 도착 판정·통계 계산 후 요약 정보(소요시간, 이동거리 등)만 서버에 남습니다.</li>
+        <li><strong>GPS 인증 완주와 익명 통계.</strong> 다른 이용자의 코스를 진행할 때, 각 장소 도착이 GPS 위치(장소 반경 100m 이내)로 확인되었는지를 판정해 "GPS 인증 완주" 여부만 기록합니다. 인증 완주 기록(실제 총 소요시간 등, 좌표 제외)은 후기를 쓰지 않더라도 해당 코스의 실측 평균 소요시간과 인증 완주 횟수 계산에 <strong>익명으로</strong> 포함됩니다. 완주자의 이름이나 개별 기록은 공개되지 않으며, 인증 완주가 3회 미만인 코스는 평균을 표시하지 않습니다.</li>
+        <li><strong>위치 이용 동의.</strong> 서비스는 일정을 처음 시작할 때 위치기반서비스 이용약관 동의(필수)를 받은 뒤에만 위치 권한을 요청하고 위치를 수집합니다. 동의하지 않아도 일정은 위치 없이(수동으로 다음 장소 이동) 진행할 수 있습니다. GPS 인증 완주 기록을 익명 코스 통계에 포함하는 것은 <strong>별도의 선택 동의</strong>이며, 동의하지 않으면 통계에서 제외됩니다.</li>
+        <li><strong>일시 중지·철회·열람.</strong> 프로필 → <strong>알림·위치 설정</strong>의 "위치정보"에서 위치 이용을 일시 중지하거나 익명 통계 포함을 끌 수 있고, 위치 동의를 철회할 수 있습니다. 철회하면 서버의 위치 결과 정보(장소 도착 시각·체류 시간, 이동 시간·거리·수단, GPS 인증 완주 여부, 후기에 표시된 실측 시간)와 이용·제공사실 확인자료가 즉시 삭제됩니다. 같은 화면의 "위치 이용 내역 보기"에서 최근 6개월의 위치 이용 기록을 확인할 수 있습니다.</li>
+        <li>위치 권한은 기기 설정에서 언제든지 철회할 수 있으며, 철회 시 실시간 도착 자동 감지 기능과 GPS 인증 완주(및 후기 작성)만 제한되고 나머지 기능은 정상적으로 이용할 수 있습니다.</li>
+      </ul>
+    </section>
+
+    <section class="article" id="art6">
+      <p class="article-num">제6조</p>
+      <h2>개인정보의 제3자 제공</h2>
+      <p>서비스는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만 다음의 경우는 예외로 합니다.</p>
+      <ul>
+        <li>이용자가 사전에 동의한 경우</li>
+        <li>법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+      </ul>
+      <p>일정 제목, 장소, 시간 등 이용자가 직접 공개로 작성한 콘텐츠는 서비스의 "일정 둘러보기" 기능 특성상 다른 이용자에게 노출되며, 이는 제3자 제공이 아닌 서비스의 핵심 기능(공개 피드)에 해당합니다.</p>
+      <p>완주 후기와 답글(별점, 한 줄 후기, 답글 내용, 실측 소요시간, 장소 건너뜀 여부, 몇 번째 완주인지, 작성자 표시 이름, 작성일)도 같은 방식으로 누구나 열람할 수 있습니다. 작성자의 이메일 등 그 밖의 개인정보는 공개되지 않습니다. 푸시 알림 발송을 위한 Expo·Google 전송은 제3자 제공이 아니라 제7조의 처리 위탁 및 국외 이전에 해당합니다.</p>
+    </section>
+
+    <section class="article" id="art7">
+      <p class="article-num">제7조</p>
+      <h2>개인정보 처리의 위탁 및 국외 이전</h2>
+      <p>서비스는 원활한 개인정보 업무 처리를 위해 아래와 같이 처리 업무를 위탁하고 있으며, 위탁계약 시 개인정보가 안전하게 관리되도록 필요한 사항을 규정합니다.</p>
+      <div class="processor-grid">
+        <div class="processor-card">
+          <div class="p-name">Supabase</div>
+          <div class="p-role">데이터베이스 · 인증 · 파일 저장</div>
+          <div class="p-detail">회원정보, 일정 데이터, 업로드 사진, 완주 기록·후기·답글·좋아요, 푸시 토큰·알림 설정의 저장·관리 및 알림 발송 서버 기능(Edge Function) 운영을 위탁</div>
+        </div>
+        <div class="processor-card">
+          <div class="p-name">Sentry</div>
+          <div class="p-role">오류·크래시 모니터링</div>
+          <div class="p-detail">앱 오류 발생 시 기기 정보·스택 트레이스 수집을 위탁</div>
+        </div>
+        <div class="processor-card">
+          <div class="p-name">Google / Kakao</div>
+          <div class="p-role">소셜 로그인(OAuth)</div>
+          <div class="p-detail">본인 인증 및 이메일·닉네임·프로필 사진 제공</div>
+        </div>
+        <div class="processor-card">
+          <div class="p-name">Expo (650 Industries, Inc.)</div>
+          <div class="p-role">푸시 알림 중계 (Expo Push Service)</div>
+          <div class="p-detail">서비스 서버(Supabase Edge Function)가 보내는 후기·답글·좋아요 알림을 이용자 기기로 중계</div>
+        </div>
+        <div class="processor-card">
+          <div class="p-name">Google (Firebase Cloud Messaging)</div>
+          <div class="p-role">Android 푸시 알림 전달</div>
+          <div class="p-detail">Expo Push Service로부터 받은 알림을 Android 기기로 최종 전달</div>
+        </div>
+      </div>
+
+      <p>회원정보·일정·사진·후기 등 서비스 데이터는 Supabase의 <strong>대한민국(서울) 리전</strong>(AWS ap-northeast-2)에 저장되어 국외로 이전되지 않습니다. Google·Kakao 소셜 로그인은 이용자가 해당 사업자에 직접 인증하는 방식입니다.</p>
+
+      <h3 style="font-size:16px; margin:22px 0 10px;">개인정보의 국외 이전</h3>
+      <p>오류 분석과 푸시 알림 발송을 위해 아래와 같이 개인정보가 국외로 이전(처리 위탁·보관)됩니다. 이용자는 알림 권한을 허용하지 않거나 설정 화면에서 알림을 끄는 방법으로 푸시 알림 관련 국외 이전을 거부할 수 있으며, 이 경우 푸시 알림만 받을 수 없고 나머지 기능은 그대로 이용할 수 있습니다. 오류 로그 전송은 서비스 안정성 유지에 필요한 처리로, 이용자 식별자(이메일·이름·회원 ID)는 보내지 않습니다.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>구분</th><th>Sentry</th><th>Expo Push Service</th><th>Firebase Cloud Messaging</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>이전받는 자</td><td>Functional Software, Inc. (Sentry)</td><td>650 Industries, Inc. (Expo)</td><td>Google LLC</td></tr>
+            <tr><td>연락처</td><td>compliance@sentry.io</td><td>expo.dev/contact (문의 양식)</td><td>support.google.com/policies (개인정보 문의)</td></tr>
+            <tr><td>이전 국가</td><td>미국</td><td>미국</td><td>미국 (Google의 글로벌 인프라)</td></tr>
+            <tr><td>이전 항목</td><td>기기 모델, OS 버전, 앱 버전, 오류 스택 트레이스</td><td colspan="2">푸시 토큰, 알림 내용(제목·본문 — 코스 제목, 별점, 답글·좋아요를 남긴 이용자의 표시 이름 포함), 알림을 눌렀을 때 이동할 코스·후기 식별자</td></tr>
+            <tr><td>이전 목적</td><td>앱 오류·충돌 원인 분석</td><td colspan="2">후기·답글·좋아요 푸시 알림의 기기 전달</td></tr>
+            <tr><td>이전 일시·방법</td><td>오류가 발생할 때마다 네트워크를 통해 암호화(HTTPS) 전송</td><td colspan="2">알림 대상 이벤트(새 후기·답글·좋아요)가 발생할 때마다 네트워크를 통해 암호화(HTTPS) 전송</td></tr>
+            <tr><td>보유·이용 기간</td><td>Sentry 요금제의 보관 기간(최대 90일) 후 파기</td><td colspan="2">알림 전달에 필요한 기간 동안 보관 후 각 사업자의 정책에 따라 파기</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="article" id="art8">
+      <p class="article-num">제8조</p>
+      <h2>이용자의 권리와 행사 방법</h2>
+      <p>이용자는 언제든지 자신의 개인정보에 대해 다음의 권리를 행사할 수 있습니다.</p>
+      <ol class="sub">
+        <li>개인정보 열람·정정 요청</li>
+        <li>개인정보 삭제 요청 (회원 탈퇴 포함)</li>
+        <li>개인정보 처리 정지 요청</li>
+      </ol>
+      <p>프로필 화면의 <strong>"회원 탈퇴"</strong> 버튼을 이용하면 별도 문의 없이 즉시 계정과 그에 연결된 개인정보(작성한 일정, 업로드한 사진, 찜·이용 기록 등)를 삭제할 수 있습니다. 그 외 열람·정정 요청이나 일부 항목만의 삭제 등은 하단 문의 이메일로 요청할 수 있으며, 서비스는 요청 확인 후 지체 없이 필요한 조치를 취합니다. 로그아웃 및 각 일정의 개별 "삭제" 기능도 프로필/일정 화면에서 이용자가 직접 처리할 수 있습니다.</p>
+      <p>회원 탈퇴 시에는 위 항목 외에 완주 기록, 후기·답글·좋아요, 신고 기록, 푸시 토큰, 알림 설정도 함께 삭제됩니다. 내가 쓴 후기와 답글은 코스 상세 화면에서 언제든 직접 수정·삭제할 수 있고, 좋아요는 다시 눌러 취소할 수 있습니다.</p>
+      <p><strong>푸시 알림 거부.</strong> 프로필 화면의 <strong>알림·위치 설정</strong>에서 "새 후기 알림", "답글 알림", "좋아요 알림"을 각각 끌 수 있으며, 기기 설정에서 앱 알림 권한 자체를 끌 수도 있습니다. 로그아웃하면 해당 기기의 푸시 토큰이 삭제되어 그 기기로는 더 이상 알림이 가지 않습니다.</p>
+    </section>
+
+    <section class="article" id="art9">
+      <p class="article-num">제9조</p>
+      <h2>개인정보의 파기 절차 및 방법</h2>
+      <p>이용 목적이 달성되거나 보유 기간이 경과한 개인정보는 지체 없이 파기합니다. 전자적 파일 형태로 저장된 정보는 복구할 수 없는 기술적 방법을 사용하여 삭제합니다.</p>
+    </section>
+
+    <section class="article" id="art10">
+      <p class="article-num">제10조</p>
+      <h2>개인정보의 안전성 확보조치</h2>
+      <ul>
+        <li>회원 데이터 및 일정 데이터에 대한 접근 권한을 본인 소유 여부에 따라 제한(행 단위 접근 제어)</li>
+        <li>인증은 Google/Kakao 표준 OAuth 프로토콜을 통해 처리되며, 서비스는 비밀번호를 직접 저장하지 않음</li>
+        <li>사진 등 업로드 파일에 대한 쓰기 권한을 업로드 본인으로 제한</li>
+        <li>후기·답글은 작성자 본인만 수정·삭제할 수 있고, 좋아요·신고 기록·푸시 토큰·알림 설정은 본인만 조회할 수 있도록 제한. 다른 이용자의 푸시 토큰은 알림 발송 서버 기능만 읽을 수 있음</li>
+      </ul>
+    </section>
+
+    <section class="article" id="art11">
+      <p class="article-num">제11조</p>
+      <h2>아동의 개인정보보호</h2>
+      <p>서비스는 만 14세 미만 아동을 주 이용 대상으로 하지 않으며, 아동으로부터 별도의 개인정보를 의도적으로 수집하지 않습니다. 소셜 로그인 사업자가 정한 최소 연령 정책을 따릅니다.</p>
+    </section>
+
+    <section class="article" id="art12">
+      <p class="article-num">제12조</p>
+      <h2>개인정보 보호책임자</h2>
+      <p>서비스는 개인정보 처리에 관한 업무를 총괄하고 이용자의 문의 및 불만 처리를 위해 아래와 같이 담당자를 두고 있습니다.</p>
+      <div class="contact-block">
+        <div>
+          <div style="font-weight:700; margin-bottom:2px;">개인정보 보호책임자</div>
+          <div style="color:var(--ink-soft); font-size:14px;">코스로 운영자</div>
+        </div>
+        <a href="mailto:jomin4119@gmail.com">jomin4119@gmail.com</a>
+      </div>
+    </section>
+
+    <section class="article" id="art13">
+      <p class="article-num">제13조</p>
+      <h2>고지의 의무</h2>
+      <p>이 방침의 내용이 추가·삭제 및 수정이 있을 경우 개정 최소 7일 전에 서비스 내 공지사항 또는 이 페이지를 통해 고지합니다. 다만 이용자의 권리에 중대한 영향을 미치는 변경이 있을 경우 최소 30일 전에 고지합니다.</p>
+    </section>
+
+    <section class="article" id="appendix">
+      <p class="article-num">부칙</p>
+      <h2>시행일</h2>
+      <p>이 개인정보처리방침은 2026년 9월 27일부터 시행됩니다.</p>
+      <ul>
+        <li>v1.4 (2026-09-27) — 위치 이용 동의(필수)·익명 통계 선택 동의, 일시 중지·철회·위치 이용 내역 열람, 위치정보 이용·제공사실 확인자료(6개월 보관) 추가</li>
+        <li>v1.3 (2026-09-27) — 서비스 이름을 코스로로 표기, 데이터 저장 위치(서울 리전) 명시, Sentry 국외 이전과 국외 이전 사업자 연락처 추가, 좋아요 알림 발송 이력 보관 기간 1년</li>
+        <li>v1.2 (2026-09-27) — 완주 후기(완주 기록·후기·답글·좋아요·신고), 코스별 익명 통계, 푸시 알림(푸시 토큰·알림 설정) 및 Expo·Google 국외 이전 추가</li>
+        <li>v1.1 (2026-09-13) · v1.0 (2026-09-10 시행)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="doc-footer">
+    <span>코스로 개인정보처리방침 · v1.4</span>
+    <span>최종 수정일 2026-09-27</span>
+  </footer>
+</div>
